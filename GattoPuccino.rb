@@ -5,14 +5,14 @@
 class GattoPuccino < Formula
   desc "GattoPuccino is a command-line tool that takes an image file and applies a coffee-themed color palette to it. It supports four different flavors - latte, frappe, macchiato, and mocha. GattoPuccino uses the ImageMagick cli tool to apply the color palette."
   homepage "https://github.com/DevMentat/GattoPuccino/"
-  version "1.6"
+  version "1.7"
 
   depends_on "imagemagick"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/DevMentat/GattoPuccino/releases/download/v1.6/GattoPuccino_1.6_darwin_arm64.tar.gz"
-      sha256 "d28168c8a4618639f5a3ee7afacc49e7586e17d4ec43ab43833936a2d3ca02f9"
+      url "https://github.com/DevMentat/GattoPuccino/releases/download/v1.7/GattoPuccino_1.7_darwin_arm64.tar.gz"
+      sha256 "7541b3362ad53b7283ff99ae5e48d8fa185130183fb411f0b22559bdf72fa968"
 
       def install
         bin.install "GattoPuccino"
@@ -22,8 +22,8 @@ class GattoPuccino < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/DevMentat/GattoPuccino/releases/download/v1.6/GattoPuccino_1.6_linux_arm64.tar.gz"
-      sha256 "b41bc9c5afc16cb2b8e75f00a4930efc630a236ae496047b5297af6027c09a54"
+      url "https://github.com/DevMentat/GattoPuccino/releases/download/v1.7/GattoPuccino_1.7_linux_arm64.tar.gz"
+      sha256 "f217cdc93c3a36eb83ba2f15f6c8521cbd49b84c16107ee249055318940a338c"
 
       def install
         bin.install "GattoPuccino"
@@ -35,5 +35,9 @@ class GattoPuccino < Formula
     <<~EOS
       gattopuccino <flavor> <image> (Flavor available: latte, frappe, macchiato, or mocha)
     EOS
+  end
+
+  test do
+    system "#{bin}/GattoPuccino"
   end
 end
