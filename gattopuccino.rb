@@ -5,22 +5,22 @@
 class Gattopuccino < Formula
   desc "GattoPuccino is a command-line tool that takes an image file and applies a coffee-themed color palette to it. It supports four different flavors - latte, frappe, macchiato, and mocha. GattoPuccino uses the ImageMagick cli tool to apply the color palette."
   homepage "https://github.com/DevMentat/GattoPuccino/"
-  version "2.5"
+  version "2.6"
 
   depends_on "imagemagick"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/DevMentat/GattoPuccino/releases/download/v2.5/GattoPuccino_2.5_darwin_amd64.tar.gz"
-      sha256 "648702b662639cba779f44e2f49c8236662c1ca0cd40fc8d1dac6fd6a1b0d308"
+      url "https://github.com/DevMentat/GattoPuccino/releases/download/v2.6/GattoPuccino_2.6_darwin_amd64.tar.gz"
+      sha256 "f2bcf117fa727641e13e81c38f2ed821cecbbc63440fb30c36180a6e0ad98d32"
 
       def install
         bin.install "GattoPuccino"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/DevMentat/GattoPuccino/releases/download/v2.5/GattoPuccino_2.5_darwin_arm64.tar.gz"
-      sha256 "eb3c286ea541419de3ad080d7d6d57342d05e1c7ead082ab681f09b8d9f819dc"
+      url "https://github.com/DevMentat/GattoPuccino/releases/download/v2.6/GattoPuccino_2.6_darwin_arm64.tar.gz"
+      sha256 "631c507ae96bed1cd9feded0e27184def5debb362d9c826b8505ec99afd01967"
 
       def install
         bin.install "GattoPuccino"
@@ -29,17 +29,17 @@ class Gattopuccino < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/DevMentat/GattoPuccino/releases/download/v2.5/GattoPuccino_2.5_linux_arm64.tar.gz"
-      sha256 "1fc3343e38f88bc27ce159d18c400455b652b6b5a00e14f4072df9c14b20dc28"
+    if Hardware::CPU.intel?
+      url "https://github.com/DevMentat/GattoPuccino/releases/download/v2.6/GattoPuccino_2.6_linux_amd64.tar.gz"
+      sha256 "6dcf64c298ef52c637f13fa6b57b4fb3f50fe50de457b4aa9e856e28a83f7970"
 
       def install
         bin.install "GattoPuccino"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/DevMentat/GattoPuccino/releases/download/v2.5/GattoPuccino_2.5_linux_amd64.tar.gz"
-      sha256 "b92eeb6ec91f774abce25ef8588c013432bc926fe2ead7ca9fb2575f087968d6"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/DevMentat/GattoPuccino/releases/download/v2.6/GattoPuccino_2.6_linux_arm64.tar.gz"
+      sha256 "e67649914a195a09a19a93cba23ec914dd9bc6b54f10f2bd73029ee1d58a9210"
 
       def install
         bin.install "GattoPuccino"
